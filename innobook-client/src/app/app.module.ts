@@ -19,17 +19,18 @@ import { headerComponent } from './components/headerSection/header.component';
 import { footerComponent } from './components/footerSection/footer.component';
 import { homepageComponent } from './components/homepage/homepage.component';
 import { sidebarComponent } from './components/sidebar/sidebar.component';
-import { myprofileComponent } from './components/myprofile/myprofile';
 import { editprofileComponent } from './components/editprofile/editprofile.component';
 import { accountsummaryComponent } from './components/accountsummary/accountsummary.component';
 import { navmenuComponent } from './components/navmenu/navmenu.component';
 import { UserloginrightComponent } from './components/useraction/user-login-right/user-login-right.component';
-import { ministatementComponent } from './components/payments/ministatement/ministatement.component';
+
 import { detailedstatementComponent } from './components/payments/detailedstatement/detailedstatement.component';
 import { headerloginComponent } from './components/headerSection/headerlogin/headerlogin.component';
 import { accountsummarymainComponent } from './components/accountsummary/accountsummarymain/accountsummarymain.component';
 import { forgotpasswordComponent } from './components/useraction/forgotpassword/forgotpassword.component';
 import { createnewaccountComponent } from './components/useraction/createnewaccount/createnewaccount.component';
+import { userlinksComponent } from './components/useraction/userlinks/userlinks.component';
+import {AppService} from './app.service';
 
 
 enableProdMode();
@@ -51,17 +52,17 @@ enableProdMode();
     footerComponent,
     homepageComponent,
     sidebarComponent,
-    myprofileComponent,
     editprofileComponent,
     accountsummaryComponent,
     navmenuComponent,
     UserloginrightComponent,
-    ministatementComponent,
+   
     detailedstatementComponent,
     headerloginComponent,
     accountsummarymainComponent,
     forgotpasswordComponent,
-    createnewaccountComponent
+    createnewaccountComponent,
+    userlinksComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +70,7 @@ enableProdMode();
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
