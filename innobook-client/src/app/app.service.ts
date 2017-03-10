@@ -4,11 +4,11 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AppService{
     url:string;
-    data:any={'success':'',error:''};
+    data:any;
 
 constructor(private _http:Http){
- 
-  
+
+
 }
 getService(){
     var  headers = new Headers;
