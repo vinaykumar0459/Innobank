@@ -6,6 +6,7 @@ var userregisterSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
     email: String,
+<<<<<<< HEAD
     password: String,
     mobileNumber: Number,
     gender: String,
@@ -19,6 +20,21 @@ var userregisterSchema = mongoose.Schema({
     isActivated: Boolean,
     transfered: [{ amount: Number, date: Date, to: Number }],
     recieved: [{ amount: Number, date: Date, from: Number }],
+=======
+    password:String,
+    mobileNumber:Number,
+    gender:String,
+    dob : Date,
+    userID:String,
+    address:String,
+    pancardNumber:String,
+    aadharcardNumber:String,
+    createdDate:Date,
+    isRegistered:Boolean,
+    isActivated:Boolean, 
+    transfered:[{amount : Number, date : Date, to : Number}],
+    recieved:[{amount : Number, date : Date, from : Number}],
+>>>>>>> 495820de7c94e5dec65b88d73cd14d3fdf684b0e
 
 });
 
