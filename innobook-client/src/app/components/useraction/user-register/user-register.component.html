@@ -1,8 +1,7 @@
 <div class="container">
   <div class="login-main col-md-8">
-    <form  id="AccessForm" class="ng-pristine ng-valid"><input name="FormInstanceToken" type="hidden" value="7D150975E3AF4C219DC8E335B0A4AC77" autocomplete="off"><noscript>&lt;input name='NoJavascript' type='hidden' value='true' /&gt;</noscript>
-<a id="inline" href="#idash" tabindex="-1"></a>
-    
+    <form  id="AccessForm" class="ng-pristine ng-valid" #userregister="ngForm">
+
     <div class="RoundBase RoundPad Corner RoundBaseDone"><div class="RoundWrap content RoundWrapDone login-left-main"><div class="t"></div><div class="Round RoundDone" style="background-color: transparent; padding: 0px; margin: 0px; border: 0px;">
         <table class="Edit" cellspacing="2px">
             <!-- ==================== Title -->
@@ -15,11 +14,16 @@
             <!-- ==================== Field -->
             <tr class="Field">
                 <td class="LabelForm">
-                    Enter you UID Number:
+                    Enter your UID Number:
                 </td>
                 <td class="Value">
-                    <input autocomplete="off" id="UsernameField" name="UsernameField" type="text" value="" width="160px" tabindex="1">
+                    <input type="text" id="uidnumber" required name="uidnumber" [(ngModel)]="uidnumber" #uidnumber="ngModel">
                     &nbsp;&nbsp;
+                    <div *ngIf="uidnumber.errors && (uidnumber.dirty || uidnumber.touched)" class="alert alert-danger">
+                        <div [hidden]="!uidnumber.errors.required">
+                            Enter your UID Number
+                        </div>
+                    </div>
                 </td>
             </tr>
             <tr class="Field">
@@ -27,11 +31,22 @@
                     Enter Mobile Number :
                 </td>
                 <td class="Value">
-                    <input autocomplete="off" id="PasswordField" name="PasswordField" type="password" value="" width="160px" tabindex="2">
+                    <input type="tel" id="mobilenumber" required name="mobilenumber" [(ngModel)]="mobilenumber" #mobilenumber="ngModel" minlength="10" maxlength="10" pattern="/^[0-9]{10,10}$/">
                     &nbsp;&nbsp;
+                    <div *ngIf="mobilenumber.errors && (mobilenumber.dirty || mobilenumber.touched)" class="alert alert-danger">
+                        <div [hidden]="!mobilenumber.errors.required">
+                            Enter your Mobile Number
+                        </div>
+                        <div [hidden]="!mobilenumber.errors.pattern">
+                            Enter Mobile Number Correctly
+                        </div>
+                        <div [hidden]="!mobilenumber.errors.minlength || !mobilenumber.errors.maxlength">
+                            Mobile Number should be 10 digits
+                        </div>
+                    </div>
                 </td>
             </tr>
-            <tr *ngIf="validUser" class="Field">
+            <!--<tr *ngIf="validUser" class="Field">
                 <td class="LabelForm">
                     Create Password :
                 </td>
@@ -50,17 +65,15 @@
                     &nbsp;&nbsp;
                     <a href="/User/AccessSigninResetPassword/Reset" tabindex="-1">Forgot Password?</a>
                 </td>
-            </tr>
+            </tr>-->
             <!-- ==================== Action -->
             <tr class="Action">
                 <td class="Label">
                 </td>
                 <td class="Value">
-                    <input id="SubmitNext" name="SubmitNext" type="submit" value="Submit" (click) = "checkDetails($event)" tabindex="3" class="Boot" autocomplete="off">
+                    <input id="SubmitNext" name="SubmitNext" type="submit" value="Submit" (click) = "checkDetails($event)" (ngSubmit)="onSubmit()" tabindex="3" class="Boot" autocomplete="off">
                     <input id="SubmitCancel" name="SubmitCancel" type="submit" value="Cancel" tabindex="4" class="Boot" autocomplete="off">
-                    <span class="SubmitWorking" style="display: none">
-                        <img alt="" src="/User/Content/Images/Spinner.gif" style="vertical-align: middle">
-                        please wait ... </span>
+                       
                 </td>
             </tr>
           

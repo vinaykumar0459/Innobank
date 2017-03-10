@@ -15,7 +15,10 @@ export class UserRegisterComponent implements OnInit {
   checkDetails(event){
     event.preventDefault();
   }
-
+  submitted = false;
+  onSubmit() {
+    this.submitted = true;
+  }
   ngOnInit() {
   }
 
