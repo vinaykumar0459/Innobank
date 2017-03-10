@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls : ['./user-register.component.css']
 })
 export class UserRegisterComponent implements OnInit {
+  
+  validUser:Boolean = false;
+  constructor() { 
 
-  constructor() { }
+  }
+  
+  checkDetails(event){
+    event.preventDefault();
+  }
 
   ngOnInit() {
   }
 
 }
+
+interface userRegister{
+  
+} 
