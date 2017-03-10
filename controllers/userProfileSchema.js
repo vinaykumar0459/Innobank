@@ -16,7 +16,7 @@ var userregisterSchema = mongoose.Schema({
     aadharcardNumber:String,
     createdDate:Date,
     isRegistered:Boolean,
-    isActivated:Boolean,
+    isActivated:Boolean, 
     transfered:[{amount : Number, date : Date, to : Number}],
     recieved:[{amount : Number, date : Date, from : Number}],
 

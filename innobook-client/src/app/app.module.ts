@@ -23,7 +23,6 @@ import { editprofileComponent } from './components/editprofile/editprofile.compo
 import { accountsummaryComponent } from './components/accountsummary/accountsummary.component';
 import { navmenuComponent } from './components/navmenu/navmenu.component';
 import { UserloginrightComponent } from './components/useraction/user-login-right/user-login-right.component';
-
 import { detailedstatementComponent } from './components/payments/detailedstatement/detailedstatement.component';
 import { headerloginComponent } from './components/headerSection/headerlogin/headerlogin.component';
 import { accountsummarymainComponent } from './components/accountsummary/accountsummarymain/accountsummarymain.component';
@@ -31,6 +30,7 @@ import { forgotpasswordComponent } from './components/useraction/forgotpassword/
 import { createnewaccountComponent } from './components/useraction/createnewaccount/createnewaccount.component';
 import { userlinksComponent } from './components/useraction/userlinks/userlinks.component';
 import {AppService} from './app.service';
+import { notfoundComponent } from './components/useraction/notfound/notfoundcomponent';
 
 
 enableProdMode();
@@ -56,7 +56,7 @@ enableProdMode();
     accountsummaryComponent,
     navmenuComponent,
     UserloginrightComponent,
-   
+    notfoundComponent,
     detailedstatementComponent,
     headerloginComponent,
     accountsummarymainComponent,
