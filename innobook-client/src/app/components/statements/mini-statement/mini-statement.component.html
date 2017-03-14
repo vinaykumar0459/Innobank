@@ -37,11 +37,11 @@
       </th>
       </tr>
       
-      <tr *ngFor = "let obj of sampleObj">
+      <tr *ngFor = "let obj of sampleObj; let i = index">
         
-        <td>{{obj.SNO}}</td> 
+        <td>{{i+1}}</td> 
 
-         <td>{{obj.Date}}</td> 
+         <td>{{obj.date}}</td> 
           <td>{{obj.Chequeno}}</td>
           <td>{{obj.TransactionRemarks}}</td>
             <td>{{obj.withdrawalAmount}}</td> 

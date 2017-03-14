@@ -6,12 +6,18 @@ var controller=require("../controllers/userActions");
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.post('/register', function(req, res, next) {
-  //res.send('respond with a resource');
-  // console.log("hai");
-  // console.log(req.body);
-   controller.createAccount(req,res);
-  // res.json("data")
-})
+router.post('/createnewaccount', function(req, res, next) {
 
+
+    controller.createAccount(req, res);
+
+    // res.json("data")
+});
+router.post('/forgotpassword', function(req, res, next) {
+
+
+    controller.forgotPassword(req, res);
+
+    // res.json("data")
+});
 module.exports = router;

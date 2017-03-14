@@ -7,9 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserRegisterComponent implements OnInit {
 
-  constructor() { }
+  checkData:userRegister;
+  validUser:Boolean = false;
+  constructor() {
 
-  ngOnInit() {
   }
 
+  checkDetails(event){
+    event.preventDefault();
+
+    //this.validUser = true;
+  }
+
+  ngOnInit() {
+    this.checkData = {
+      uid :undefined,
+      mobile :undefined,
+      password :'',
+      confpassword :''
+    }
+  }
+
+}
+
+interface userRegister{
+    uid:Number;
+    mobile:Number;
+    password:String;
+    confpassword:String;
 }

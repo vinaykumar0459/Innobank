@@ -12,6 +12,7 @@ import { createnewaccountComponent } from './components/useraction/createnewacco
 import { accountsummarymainComponent } from './components/accountsummary/accountsummarymain/accountsummarymain.component';
 import { FundTransferComponent } from './components/payments/fund-transfer/fund-transfer.component';
 import {  MiniStatementComponent } from './components/statements/mini-statement/mini-statement.component';
+import {  DetailedStatementComponent } from './components/statements/detailed-statement/detailed-statement.component';
 const appRoutes: Routes=[
 
    
@@ -23,11 +24,9 @@ const appRoutes: Routes=[
      { path: 'forgotpassword', component: forgotpasswordComponent},
      { path: 'createnewaccount', component: createnewaccountComponent}
    ] },
-{ path: 'accountsummary', component: accountsummarymainComponent, children : [
-     { path : '', component: accountsummaryComponent},
-     { path : 'myprofile', component : editprofileComponent}
-]} ,
-{ path: 'myprofile', component : editprofileComponent },
+{ path: '', component: accountsummarymainComponent, children : [
+     { path : 'accountsummary', component: accountsummaryComponent},
+     { path: 'myprofile', component : editprofileComponent },
  {
     path:"ministatement",
     component:MiniStatementComponent
@@ -35,7 +34,13 @@ const appRoutes: Routes=[
 {
     path:"fundtransfer",
     component:FundTransferComponent
+  },{
+    path:"detailedstatement",
+    component:DetailedStatementComponent
   }
+
+]} ,
+
   
 
 ]

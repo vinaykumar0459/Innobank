@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {AppService} from '../../../app.service';
 @Component({
   selector: 'app-mini-statement',
   templateUrl: './ministatement.component.html'
@@ -9,7 +9,7 @@ export class MiniStatementComponent implements OnInit {
 sampleObj :any[];
 name:string="saroj";
 accNo:number=12345678901;
-  constructor() {
+  constructor (private miniStatementService:AppService ) {
     this.sampleObj=[
   
    { SNO: 201, Date: '03-09-2017',Chequeno:3344,TransactionRemarks:"Good",withdrawalAmount:3000.00,
@@ -29,6 +29,10 @@ accNo:number=12345678901;
    }
 
   ngOnInit() {
+    this.miniStatementService.url="http://localhost:3000/ministatement"
+ this.miniStatementService.getService().subscribe(
+   res => {console.log(res["_body"])
+  });
   }
 
 }

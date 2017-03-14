@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {enableProdMode} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {Ng2PaginationModule} from 'ng2-pagination';
 import {Routes,RouterModule} from '@angular/router';
 import {routing} from './app.routing';
 import {ModuleWithProviders} from '@angular/core';
@@ -14,7 +15,7 @@ import { UserRegisterComponent } from './components/useraction/user-register/use
 import { FundTransferComponent } from './components/payments/fund-transfer/fund-transfer.component';
 import { AccountSummaryComponent } from './components/myaccounts/account-summary/account-summary.component';
 import { MiniStatementComponent } from './components/statements/mini-statement/mini-statement.component';
-import { DetailedStatementComponent } from './components/statements/detailed-statement/detailed-statement.component';
+import {  DetailedStatementComponent } from './components/statements/detailed-statement/detailed-statement.component';
 import { headerComponent } from './components/headerSection/header.component';
 import { footerComponent } from './components/footerSection/footer.component';
 import { homepageComponent } from './components/homepage/homepage.component';
@@ -68,6 +69,7 @@ enableProdMode();
     BrowserModule,
     FormsModule,
     HttpModule,
+    Ng2PaginationModule,
     routing
   ],
   providers: [AppService],

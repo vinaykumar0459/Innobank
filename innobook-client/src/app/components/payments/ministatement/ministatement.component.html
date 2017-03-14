@@ -37,13 +37,13 @@
       </th>
       </tr>
       
-      <tr *ngFor = "let obj of sampleObj">
+      <tr *ngFor = "let obj of sampleObj;let i = index" [attr.data-index]="i">
         
-        <td>{{obj.SNO}}</td> 
+        <td>{{i+1}}</td> 
 
          <td>{{obj.Date}}</td> 
           <td>{{obj.Chequeno}}</td>
-          <td>{{obj.TransactionRemarks}}</td>
+          <td>{{obj.}}</td>
             <td>{{obj.withdrawalAmount}}</td> 
              <td>{{obj.DepositAmount}}</td>
                <td>{{obj.BalanceAmount}}</td> 

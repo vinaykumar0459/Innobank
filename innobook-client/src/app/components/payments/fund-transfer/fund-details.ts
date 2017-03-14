@@ -5,4 +5,6 @@ export interface FundTransfer{
     ifsccode:any;
     accountnum:number;
     amount:number;
+    date:Date;
+    fromAccount:number;
 }
